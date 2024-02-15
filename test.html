@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <ul id="ul"></div>
+</head>
+<body>
+  <script>
+    async function Fetch() {
+    let url = 'https://musicapi-19wk.onrender.com/music/myAPI';
+    let response = await fetch(url);
+    let songDetail = await response.json();
+    for (let index = 0; index < songDetail.length; index++) {
+      let element = songDetail[index];
+      console.log(element);
+        document.getElementById("ul").innerHTML += `
+            <button  onclick="playing(${index})" class="shadow-sm all px-2 w-100 bg-body-tertiary p-1 mt-2 rounded-4 musiclist">
+                <img class=" songimg mt-2 ms-2 rounded-circle" style="height: 50px; width:50px;" src="${element.songImage}" alt="">
+                <div class="name ms-3">
+                <h6 class="mt-1"><b>${element.songTitle}</b></h6>
+                <small class="mt-1 small text-dark">${element.artistName}</small>
+                </div>
+                </button>`;
+            }
+        }
+Fetch();
+const playing  = (song)=>{
+    console.log(song.songDetail);
+}
+  </script>
+</body>
+</html>

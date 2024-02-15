@@ -13,7 +13,7 @@
     position: fixed !important;
 }
 .footer{
-    padding: 10px 10px 10px 10px;
+    padding: 11px 10px 10px 10px;
     width: 100%;
     background-color: black !important;
     border-top-left-radius: 20px;
@@ -21,11 +21,15 @@
     box-shadow: 0px 0px 5px 5px  rgba(255, 0, 0, 0.678);
     margin-top: 73vh;
     position: fixed !important;
+    z-index: 99 !important;
   }
   #last{
-    transition: transform 1.1s ease; 
+    transition: transform 1s ease;
   }
   
+  #card {
+    transition: opacity 1s ease; /* Transition for opacity */
+  }
 button{
     text-decoration: none;
     border: none;
@@ -39,22 +43,46 @@ button{
 /* Remove default styles for WebKit browsers */
 input[type=range] {
     -webkit-appearance: none;
-    width: 100%; /* Adjust width as needed */
-    height: 30px; /* Adjust height as needed */
-    background-color: transparent; /* Track color */
-    border-radius: 5px; /* Adjust as needed */
-    outline: 3px solid red; /* Remove default focus outline */
+    width: 100%; 
+    height: 30px; 
+    background-color: transparent; 
+    border-radius: 5px; 
+    outline: 3px solid red; 
+}
+small{
+  color: red;
 }
 
-/* Style thumb for Firefox */
-input[type=range]::-moz-range-thumb {
+input[type=range]::-moz-range-thumb{
+  -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+  -moz-apperance: none; /* Remove default styling for Firefox */
+  appearance: none;
     width: 2px; 
-    height: 25px; 
-    background-color: #ffff;
+    height: 25px;   
+    background-color: #ffffff;
     border-radius: 0px;
     cursor: pointer; 
 }
-
+input[type="range"]::-ms-thumb {
+  -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+  -moz-apperance: none; /* Remove default styling for Firefox */
+  appearance: none;
+  width: 2px; 
+  height: 25px;   
+  background-color: #ffffff;
+  border-radius: 0px;
+  cursor: pointer; 
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+  -moz-apperance: none; /* Remove default styling for Firefox */
+  appearance: none;
+  width: 2px; 
+  height: 25px;   
+  background-color: #ffffff;
+  border-radius: 0px;
+  cursor: pointer; 
+}
 
 .space{
     padding: 50px !important;
@@ -261,5 +289,25 @@ small{
   .card__btn-play path {
     fill: var(--bg-color);
   }
-    
-    
+.musiclist{
+  display: inline;
+}    
+.songimg{
+  float: left !important;
+}
+small{
+  display: block !important;
+}
+.name{
+  position: sticky !important;
+  margin-top: 5px !important;
+  margin-right: 80px !important;
+  border: 0px solid rgb(238, 255, 0);
+
+} 
+.all{
+  overflow: hidden !important;
+}
+.all:hover{
+  background-color: rgba(0, 0, 0, 0.137) !important;
+}
